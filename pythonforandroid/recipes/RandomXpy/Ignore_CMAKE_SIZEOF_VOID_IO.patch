@@ -1,0 +1,37 @@
+Index: external/pybind11/tools/FindPythonLibsNew.cmake
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/external/pybind11/tools/FindPythonLibsNew.cmake b/external/pybind11/tools/FindPythonLibsNew.cmake
+--- a/external/pybind11/tools/FindPythonLibsNew.cmake	(revision 9ec1128c7aac3d069a4ec2bd1dfc7f57c6526d1c)
++++ b/external/pybind11/tools/FindPythonLibsNew.cmake	(date 1645281835621)
+@@ -156,17 +156,17 @@
+ 
+ # Make sure the Python has the same pointer-size as the chosen compiler
+ # Skip if CMAKE_SIZEOF_VOID_P is not defined
+-if(CMAKE_SIZEOF_VOID_P AND (NOT "${PYTHON_SIZEOF_VOID_P}" STREQUAL "${CMAKE_SIZEOF_VOID_P}"))
+-  if(PythonLibsNew_FIND_REQUIRED)
+-    math(EXPR _PYTHON_BITS "${PYTHON_SIZEOF_VOID_P} * 8")
+-    math(EXPR _CMAKE_BITS "${CMAKE_SIZEOF_VOID_P} * 8")
+-    message(FATAL_ERROR "Python config failure: Python is ${_PYTHON_BITS}-bit, "
+-                        "chosen compiler is  ${_CMAKE_BITS}-bit")
+-  endif()
+-  set(PYTHONLIBS_FOUND FALSE)
+-  set(PythonLibsNew_FOUND FALSE)
+-  return()
+-endif()
++#if(CMAKE_SIZEOF_VOID_P AND (NOT "${PYTHON_SIZEOF_VOID_P}" STREQUAL "${CMAKE_SIZEOF_VOID_P}"))
++#  if(PythonLibsNew_FIND_REQUIRED)
++#    math(EXPR _PYTHON_BITS "${PYTHON_SIZEOF_VOID_P} * 8")
++#    math(EXPR _CMAKE_BITS "${CMAKE_SIZEOF_VOID_P} * 8")
++#    message(FATAL_ERROR "Python config failure: Python is ${_PYTHON_BITS}-bit, "
++#                        "chosen compiler is  ${_CMAKE_BITS}-bit")
++#  endif()
++#  set(PYTHONLIBS_FOUND FALSE)
++#  set(PythonLibsNew_FOUND FALSE)
++#  return()
++#endif()
+ 
+ # The built-in FindPython didn't always give the version numbers
+ string(REGEX REPLACE "\\." ";" _PYTHON_VERSION_LIST ${_PYTHON_VERSION_LIST})
